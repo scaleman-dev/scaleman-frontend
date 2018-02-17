@@ -1,0 +1,37 @@
+#nav-mobile
+  .user
+    i
+      font-size: 3em
+  li.link
+    a
+      padding: 0 16px
+  a,span
+    color: $secondary-color
+    font-weight: 500
+    transition: all 0.3s ease 
+    &.active 
+      color: $primary-color
+nav
+  background-color: #fff
+  .button-collapse
+    color: $secondary-color
+  ul
+    a
+      color: $secondary-color
+      font-weight: 500
+      transition: all 0.3s ease 
+      &:hover
+        background-color: #fff
+        color: $primary-color
+        box-shadow: inset 0px -2px 0px #0085FF
+      &.active 
+        color: $primary-color
+  .brand-logo
+    height: 100%
+    margin-left: 20px
+    @media #{$medium-and-down}
+      margin-left:  0
+    img
+      height: 30px
+      vertical-align: middle
+      
