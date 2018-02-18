@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    if (localStorage.getItem('isLogedIn') !== 'true') {
+    if(localStorage.getItem('isLogedIn') !== 'true') {
       this.router.navigate(['login']);
     }
   }

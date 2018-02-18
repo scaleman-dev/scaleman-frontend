@@ -1,3 +1,41 @@
-<p>
-  scaling-groups works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="right new-group">
+            <a routerLink='/create-scaling-groups' class="waves-effect waves-teal btn-flat"><i class="material-icons left">add</i>New scaling group</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="page-title">Active scaling groups</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6 l6" *ngFor='let scalinggroup of scalingGroups'>
+            <div class="card">
+                <div class="card-content">
+                    <div class="name">
+                        {{scalinggroup.name}}
+                    </div>
+                    <div class="lb-id">
+                        {{scalinggroup.load_balancer_id}}
+                    </div>
+                    <div class="n-inst">
+                        {{scalinggroup.desired_instance_count}} &amp; {{scalinggroup.max_instance_count}}
+                    </div>
+                </div>
+                <div class="card-action row no-margin ">
+                    <div class="col s6 center-align ">
+                        <a class='blue-text' href="#" style="margin: 0">Edit</a>
+                    </div>
+                    <div class="col s6 center-align ">
+                        <a class='red-text' href="#" style="margin: 0">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="background">
+
+</div>

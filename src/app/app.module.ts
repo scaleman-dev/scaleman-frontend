@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ScalingGroupsComponent } from './components/scaling-groups/scaling-groups.component';
+import { CreateScalingGroupComponent } from './components/create-scaling-group/create-scaling-group.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ScalingGroupsComponent } from './components/scaling-groups/scaling-grou
     AppComponent,
     LoginPageComponent,
     DashboardComponent,
-    ScalingGroupsComponent
+    ScalingGroupsComponent,
+    CreateScalingGroupComponent
   ],
   imports: [
     BrowserModule,

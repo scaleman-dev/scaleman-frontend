@@ -28,7 +28,7 @@ export class LoginPageComponent implements OnInit {
     if (this.loginForm.valid) {
       Materialize.toast('Please Wait', 1000);
       let payload = {
-        email: this.loginForm.value['userName'],
+        username: this.loginForm.value['userName'],
         password: this.loginForm.value['password'],
       };
       this.http.post('/api/login', payload)
@@ -36,7 +36,8 @@ export class LoginPageComponent implements OnInit {
         .subscribe(data => {
           Materialize.toast('login successful', 1000);
           localStorage.setItem('isLogedIn', 'true');
-          localStorage.setItem('userName', payload.email);
+          localStorage.setItem('userName', payload.username);
+          this.router.navigate(['dashboard'])
           console.log(data);
         }, error => {
           console.log(error);

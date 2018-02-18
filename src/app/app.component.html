@@ -6,22 +6,48 @@
             <a href="#!email"><span class="email">jdandturk@gmail.com</span></a>
         </div>
     </li>
-    <li class="link" [ngClass]='{"active": pageUrl == "dashboard"}'><a routerLink='dashboard' href="sass.html">Dashboard</a></li>
-    <li class="link" [ngClass]='{"active": pageUrl == "scaling-groups"}'><a routerLink='scaling-groups' href="badges.html">Scaling Groups</a></li>
+    <li class="link" [ngClass]='{"active": pageUrl == "dashboard"}'><a routerLink='/dashboard'>Dashboard</a></li>
+    <li class="link" [ngClass]='{"active":( pageUrl == "scaling-groups" || pageUrl == "create=scaling-groups")}'><a routerLink='/scaling-groups'>Scaling Groups</a></li>
+    <li class="link"><a (click)='logout()'>Logout</a>
+    </li>
 </ul>
-
-<nav *ngIf='!isLoggedIn'>
+<nav *ngIf='isLogedIn'>
     <div class="nav-wrapper">
         <a href="#" data-activates="nav-mobile" class="button-collapse left"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo">
             <img src="assets/images/logo.svg" alt="">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a routerLink='dashboard' [ngClass]='{"active": pageUrl == "dashboard"}'>Dashboard</a></li>
-            <li><a routerLink='scaling-groups' [ngClass]='{"active": pageUrl == "scaling-groups"}'>Scaling Groups</a></li>
+            <li><a routerLink='/dashboard' [ngClass]='{"active": pageUrl == "dashboard"}'>Dashboard</a></li>
+            <li><a routerLink='/scaling-groups' [ngClass]='{"active":( pageUrl == "scaling-groups" || pageUrl == "create=scaling-groups")}'>Scaling Groups</a></li>
+            <li><a (click)=logout()><i class="material-icons">power_settings_new</i></a></li>
         </ul>
     </div>
 </nav>
 
-
-<router-outlet></router-outlet>
+<div class="backdrop-blur">
+    <div class="loader-bg">
+        <div class="center-align">
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wait">
+            Please Wait
+        </div>
+    </div>
+</div>
+<div class="app-wrapper">
+    <router-outlet></router-outlet>
+</div>
+<div class="bg"></div>
