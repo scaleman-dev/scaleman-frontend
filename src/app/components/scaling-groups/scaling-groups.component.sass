@@ -8,7 +8,12 @@ app-scaling-groups
     width: 100%
     z-index: -1
   .new-group
-    margin: 20px 0
+    margin: 20px 0 10px
+    float: right
+    @media #{$medium-and-down}
+      clear: both
+      text-align: center
+      float: none
     a.btn-flat
       background-color: $primary-color-dark
       vertical-align: middle

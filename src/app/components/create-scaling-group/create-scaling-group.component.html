@@ -14,11 +14,11 @@
     <div class="row">
         <form action="" class="col s12 m12 l10 offset-l1" [formGroup]='scalingGroupForm' (ngSubmit)='submit()'>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m12 l6">
                     <input id="instance-name" type="text" class="validate" formControlName='name'>
                     <label for="instance-name">Scaling group Name</label>
                 </div>
-                <div class="col s6 drpdwn">
+                <div class="col s12 m12 l6 drpdwn">
                     <label>Load balancer</label>
                     <select class="browser-default" formControlName="load_balancer_id">
                     <option value="" disabled selected>Choose your option</option>
@@ -27,21 +27,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m12 l6">
                     <input id="des-instance" type="number" class="validate" formControlName='desired_instance_count'>
                     <label for="des-instance">Desired instances</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12 m12 l6">
                     <input id="dmac-instance" type="number" class="validate" formControlName='max_instance_count'>
                     <label for="des-instance">Max instances</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m12 l6">
                     <input value='5' id="des-instance" type="number" class="validate" formControlName='cool_down_time'>
                     <label for="des-instance">Cooldown time</label>
                 </div>
-                <div class="col s6 drpdwn">
+                <div class="col s12 m12 l6 drpdwn">
                     <label>Snapshot</label>
                     <select class="browser-default" formControlName='snapshot_id'>
                     <option value="" disabled selected>Choose your option</option>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="roww">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m12 l6">
                     <input value='5' id="max-cpu" type="number" class="validate" formControlName='max_cpu_usage'>
                     <label for="max-cpu">Max cpu usage</label>
                 </div>
@@ -89,7 +89,7 @@
                     <label for="termenation">Termenation policy</label>
                 </div>
             </div>
-            <button class="btn-flat right green  white-text" type="submit">Submit</button>
+            <button class="btn-flat right green  white-text" [disabled]="!scalingGroupForm.valid" type="submit">Submit</button>
         </form>
     </div>
 </div>

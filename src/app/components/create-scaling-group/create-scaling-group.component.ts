@@ -51,6 +51,8 @@ export class CreateScalingGroupComponent implements OnInit {
     this.http.post('/api/autoscaling_groups', this.scalingGroupForm.value).map(res => res.json())
     .subscribe(data => {
       console.log(data);
+      Materialize.toast('Scaling group created succesfully');
+      this.router.navigate(['scaling-groups']);
     })
     console.log(this.scalingGroupForm.value);
   }

@@ -11,10 +11,11 @@
     <li class="link"><a (click)='logout()'>Logout</a>
     </li>
 </ul>
+
 <nav *ngIf='isLogedIn' id="normal-nav">
     <div class="nav-wrapper">
         <a href="#" data-activates="nav-mobile" class="button-collapse left"><i class="material-icons">menu</i></a>
-        <a href="#" class="brand-logo">
+        <a routerLink='/dashboard' class="brand-logo">
             <img src="assets/images/logo.svg" alt="">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
